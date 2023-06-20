@@ -2,12 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://www.formationflight.org/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.formationflight.org/faq/</loc>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.formationflight.org/getting-started/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.formationflight.org/wifi/</loc>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
