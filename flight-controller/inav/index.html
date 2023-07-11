@@ -12,21 +12,27 @@
         <meta name="author" content="FormationFlight Authors">
       
       
+        <link rel="canonical" href="https://www.formationflight.org/flight-controller/inav/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="prev" href="../../getting-started/">
+      
+      
+        <link rel="next" href="../ardupilot/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
-        <title>FormationFlight</title>
+        <title>iNav - FormationFlight</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.eebd395e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -42,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -59,6 +65,32 @@
   
 
     
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="iNav - FormationFlight" >
+      
+        <meta  property="og:description"  content="FormationFlight provides FPV pilots with inter-UAS positioning & telemetry enabling formation flights, chase footage, and ground station coordination with ease." >
+      
+        <meta  property="og:image"  content="https://www.formationflight.org/assets/images/social/flight-controller/inav.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://www.formationflight.org/flight-controller/inav/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="iNav - FormationFlight" >
+      
+        <meta  name="twitter:description"  content="FormationFlight provides FPV pilots with inter-UAS positioning & telemetry enabling formation flights, chase footage, and ground station coordination with ease." >
+      
+        <meta  name="twitter:image"  content="https://www.formationflight.org/assets/images/social/flight-controller/inav.png" >
+      
     
     
   </head>
@@ -82,6 +114,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#setting-up-inav-with-formationflight" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -92,9 +129,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="FormationFlight" class="md-header__button md-logo" aria-label="FormationFlight" data-md-component="logo">
+    <a href="../.." title="FormationFlight" class="md-header__button md-logo" aria-label="FormationFlight" data-md-component="logo">
       
-  <img src="/assets/images/logo.png" alt="logo">
+  <img src="../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -110,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              iNav
             
           </span>
         </div>
@@ -213,7 +250,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -222,13 +259,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="/getting-started/" class="md-tabs__link">
+      <a href="../../getting-started/" class="md-tabs__link md-tabs__link--active">
         Quick Start
       </a>
     </li>
@@ -244,7 +283,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/wifi/" class="md-tabs__link">
+      <a href="../../wifi/" class="md-tabs__link">
         Info
       </a>
     </li>
@@ -257,7 +296,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/faq/" class="md-tabs__link">
+    <a href="../../faq/" class="md-tabs__link">
       FAQ
     </a>
   </li>
@@ -284,9 +323,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="FormationFlight" class="md-nav__button md-logo" aria-label="FormationFlight" data-md-component="logo">
+    <a href="../.." title="FormationFlight" class="md-nav__button md-logo" aria-label="FormationFlight" data-md-component="logo">
       
-  <img src="/assets/images/logo.png" alt="logo">
+  <img src="../../assets/images/logo.png" alt="logo">
 
     </a>
     FormationFlight
@@ -314,7 +353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -327,14 +366,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
       
       
       
@@ -343,7 +384,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Quick Start
@@ -356,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/getting-started/" class="md-nav__link">
+      <a href="../../getting-started/" class="md-nav__link">
         Getting Started
       </a>
     </li>
@@ -368,16 +409,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
       
       
       
@@ -386,7 +429,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
           Flight Controller Setup
@@ -397,11 +440,99 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/flight-controller/inav/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          iNav
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         iNav
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configure" class="md-nav__link">
+    Configure
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-the-serial-port-for-msp" class="md-nav__link">
+    Set the serial port for MSP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-the-radar-osd" class="md-nav__link">
+    Enable the Radar OSD
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#walksnail" class="md-nav__link">
+    Walksnail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analog" class="md-nav__link">
+    Analog
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -413,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/flight-controller/ardupilot/" class="md-nav__link">
+      <a href="../ardupilot/" class="md-nav__link">
         Ardupilot
       </a>
     </li>
@@ -448,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/troubleshooting/" class="md-nav__link">
+      <a href="../../troubleshooting/" class="md-nav__link">
         Troubleshooting
       </a>
     </li>
@@ -497,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/wifi/" class="md-nav__link">
+      <a href="../../wifi/" class="md-nav__link">
         WiFi
       </a>
     </li>
@@ -511,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced/" class="md-nav__link">
+      <a href="../../advanced/" class="md-nav__link">
         Advanced Topics
       </a>
     </li>
@@ -533,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/faq/" class="md-nav__link">
+      <a href="../../faq/" class="md-nav__link">
         FAQ
       </a>
     </li>
@@ -557,6 +688,70 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configure" class="md-nav__link">
+    Configure
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-the-serial-port-for-msp" class="md-nav__link">
+    Set the serial port for MSP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-the-radar-osd" class="md-nav__link">
+    Enable the Radar OSD
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#walksnail" class="md-nav__link">
+    Walksnail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analog" class="md-nav__link">
+    Analog
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -568,8 +763,35 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
+  
 
+
+
+  
+  
+
+
+<h1 id="setting-up-inav-with-formationflight">Setting up iNav with FormationFlight<a class="headerlink" href="#setting-up-inav-with-formationflight" title="Permanent link">&para;</a></h1>
+<h2 id="configure">Configure<a class="headerlink" href="#configure" title="Permanent link">&para;</a></h2>
+<h3 id="set-the-serial-port-for-msp">Set the serial port for MSP<a class="headerlink" href="#set-the-serial-port-for-msp" title="Permanent link">&para;</a></h3>
+<p>In the "Ports" section of the iNav Configurator, find the port on which you've connected your FormationFlight device. Enable the MSP switch, and Save.</p>
+<h3 id="enable-the-radar-osd">Enable the Radar OSD<a class="headerlink" href="#enable-the-radar-osd" title="Permanent link">&para;</a></h3>
+<p>Follow the <a href="https://github.com/iNavFlight/inav/wiki/OSD-Hud-and-ESP32-radars">iNav documentation</a> to enable OSD Radar, namely the <code>osd_hud_radar_</code> items.</p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="walksnail">Walksnail<a class="headerlink" href="#walksnail" title="Permanent link">&para;</a></h3>
+<p>The Radar OSD can be seen in the middle of this screenshot (indicating peer "B")
+<img alt="ArduPilot Radar Screenshot" src="/assets/images/walksnail_and_inav.PNG" /></p>
+<h3 id="analog">Analog<a class="headerlink" href="#analog" title="Permanent link">&para;</a></h3>
+<p>Please contribute your analog iNav FormationFlight screenshots! Send them to MUSTARDTIGER on the <a href="https://discord.gg/npaX3VxQjh">Discord</a>.</p>
+
+
+  
+
+
+
+
+                
               </article>
             </div>
           
@@ -703,10 +925,10 @@
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["announce.dismiss", "navigation.instant", "navigation.sections", "navigation.tabs", "search.highlight", "search.suggest", "toc.follow"], "search": "/assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "navigation.instant", "navigation.sections", "navigation.tabs", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   </body>
