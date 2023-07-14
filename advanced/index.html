@@ -654,6 +654,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#useful-snippets" class="md-nav__link">
+    Useful snippets
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -751,6 +758,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#useful-snippets" class="md-nav__link">
+    Useful snippets
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -797,6 +811,21 @@
 </code></pre></div>
 <h2 id="wifi-flashing">WiFi Flashing<a class="headerlink" href="#wifi-flashing" title="Permanent link">&para;</a></h2>
 <p>FormationFlight supports WiFi OTA firmware upgrades through the standard espota protocol. The easiest way to use this function is to choose the "Upload" action on any of the targets ending in <code>_via_WiFi</code> in PlatformIO, but a tool to make OTA flashing easier is planned.</p>
+<h2 id="useful-snippets">Useful snippets<a class="headerlink" href="#useful-snippets" title="Permanent link">&para;</a></h2>
+<p>Since certain parameters of FormationFlight can be changed via the HTTP API, certain snippets can be useful to copy-and-paste.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Disable radio #1 (LoRa)</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://192.168.4.1/radiomanager/radio_set_enabled<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;index=1&amp;status=false&quot;</span>
+<span class="c1"># Enable radio #1 (LoRa)</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://192.168.4.1/radiomanager/radio_set_enabled<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;index=1&amp;status=true&quot;</span>
+<span class="c1"># Begin spoofing GPS location of this FF radio</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://192.168.4.1/gnssmanager/spoof<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;lat=45.171546&amp;lon=5.722387&quot;</span>
+<span class="c1"># Begin spoofing peers</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://192.168.4.1/mspmanager/spoof
+<span class="c1"># Reboot the FormationFlight radio</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://192.168.4.1/system/reboot
+<span class="c1"># Put the FormationFlight radio into bootloader mode</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://192.168.4.1/system/bootloader
+</code></pre></div>
 
 
   

@@ -784,7 +784,7 @@
 <h3 id="enable-radar-support">Enable Radar support<a class="headerlink" href="#enable-radar-support" title="Permanent link">&para;</a></h3>
 <p>Set the Ardupilot parameter <code>RADAR_TYPE</code>. This must be set to <code>1</code> for MSP Radar, which is the only form supported at the moment.</p>
 <h3 id="set-the-serial-port-for-msp">Set the serial port for MSP<a class="headerlink" href="#set-the-serial-port-for-msp" title="Permanent link">&para;</a></h3>
-<p>Find the correct <code>SERIALX_PROTOCOL</code> instance for the serial port on which your Radar module is connected. You'll then set <code>SERIALX_PROTOCOL</code> to <code>32</code> for MSP</p>
+<p>Find the correct <code>SERIALX_PROTOCOL</code> instance for the serial port on which your Radar module is connected. You'll then set <code>SERIALX_PROTOCOL</code> to <code>32</code> for MSP. <code>SERIALX_BAUD</code> and other related settings should be kept at their default, which is 115200 baud.</p>
 <h3 id="enable-the-radar-osd">Enable the Radar OSD<a class="headerlink" href="#enable-the-radar-osd" title="Permanent link">&para;</a></h3>
 <p>In the Onboard OSD section of Mission Planner, enable the <code>RADAR</code> element and set its X/Y positions. The current (2023-07) design takes up two lines of OSD space, the top for horizontal offset and the bottom for vertical. This may change in the future, but plan for 2 lines of space when placing it in your OSD.</p>
 <p>The Radar OSD can be seen in the bottom-left of this screenshot (beginning with "C")</p>
