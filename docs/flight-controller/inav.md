@@ -10,6 +10,7 @@ In the "Ports" section of the iNav Configurator, find the port on which you've c
 ### Enable the Radar OSD
 
 Follow the [iNav documentation](https://github.com/iNavFlight/inav/wiki/OSD-Hud-and-ESP32-radars) to enable OSD Radar, namely the `osd_hud_radar_` items.
+Note: iNav HUD does not activate until a heading is established, so if you only have a GPS connected, you might need to walk outside with the aircraft until a heading can be calculated by iNav.
 
 ## Examples
 
