@@ -108,7 +108,7 @@ Now that your FormationFlight setup is installed, flashed, and running, let's te
 $ curl -X POST http://192.168.4.1/mspmanager/spoof
 ```
 1. Confirm that the command has returned `OK` as a result
-1. Observe your OSD - you should see 5 peers all around you at varying distances from 100m to 600m dependent on setup
+1. Observe your OSD - you should see 5 peers all around you at varying distances from 100m to 600m dependent on setup. Note: iNav HUD does not activate until a heading is established, so if you only have a GPS connected, you might need to walk outside with the aircraft until a heading can be calculated by iNav.
 1. Make sure to power cycle the system before you fly to disable spoofing mode!
 
 If you run into any trouble, visit our [troubleshooting](/troubleshooting) section, or come to the [FormationFlight Discord](https://discord.gg/npaX3VxQjh)'s #help-and-support channel
