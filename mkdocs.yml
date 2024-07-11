@@ -157,7 +157,4 @@ nav:
     - WiFi: wifi.md
     - Advanced Topics: advanced/index.md
   - FAQ: faq.md
-
-extra_javascript:
-
 #INHERIT: redirects.yml
