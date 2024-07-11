@@ -105,7 +105,7 @@ Now that your FormationFlight setup is installed, flashed, and running, let's te
     - If your FormationFlight setup isn't showing GPS values, make sure it can see the FC by visiting http://192.168.4.1/ and looking at the "host" parameter - if it displays "NoFC", your FormationFlight setup can't talk to your flight controller, and you should check its wiring and pins
 1. Open command prompt or terminal on your PC and enter the following command to enable spoofing on FormationFlight:
 ```sh
-$ curl -X POST http://192.168.4.1/mspmanager/spoof
+$ curl -X POST http://192.168.4.1/peermanager/spoof
 ```
 1. Confirm that the command has returned `OK` as a result
 1. Observe your OSD - you should see 5 peers all around you at varying distances from 100m to 600m dependent on setup
