@@ -144,9 +144,9 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Web Installer: installer/index.html
   - Quick Start:
     - Getting Started: getting-started.md
-    - Web Installer: installer/index.html
     - Flight Controller Setup:
       - iNav: flight-controller/inav.md
       - Ardupilot: flight-controller/ardupilot.md
