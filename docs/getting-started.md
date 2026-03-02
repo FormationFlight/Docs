@@ -38,7 +38,15 @@ Now you'll need to put the board into bootloader mode - this is done by connecti
 
 ### Flash
 
-#### Install ESP flasher
+#### Web Installer (Recommended)
+
+Use the FormationFlight Web Installer on a Chromium-based browser (Chrome, Edge, Brave). It uses Web Serial and does not require any desktop app.
+
+[Open Web Installer :fontawesome-solid-bolt:](https://formationflight.org/installer/){ .md-button }
+
+If you run into trouble (for example, no Web Serial support), use the desktop flasher option below.
+
+#### Install ESP flasher (Desktop Alternative)
 
 You can download an easy to use ESP flasher tool from [Jason8266's ESP\_Flasher repo](https://github.com/Jason2866/ESP_Flasher/releases). This tool makes it easy to install the FormationFlight firmware on your ESP board of choice.
 
@@ -112,4 +120,3 @@ $ curl -X POST http://192.168.4.1/peermanager/spoof
 1. Make sure to power cycle the system before you fly to disable spoofing mode!
 
 If you run into any trouble, visit our [troubleshooting](/troubleshooting) section, or come to the [FormationFlight Discord](https://discord.gg/npaX3VxQjh)'s #help-and-support channel
-

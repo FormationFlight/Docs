@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>FormationFlight installer</title>
+    <meta name="description" content="Easily allow users to install FormationFlight firmware on the web."/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="color-scheme" content="dark light"/>
+    <link rel="icon" type="image/png" href="./images/logo.png"/>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/esp-web-tools@8.0.1/dist/web/install-button.js?module"></script>
+    <meta property="og:type" content="website">
+
+    <meta property="og:title" content="Web Installer">
+
+    <meta property="og:description"
+          content="FormationFlight provides FPV pilots with inter-UAS positioning & telemetry enabling formation flights, chase footage, and ground station coordination with ease.">
+
+    <meta property="og:image" content="https://formationflight.org/installer/images/social_share.png">
+
+    <meta property="og:image:type" content="image/png">
+
+    <meta property="og:image:width" content="1200">
+
+    <meta property="og:image:height" content="630">
+
+    <meta property="og:url" content="https://formationflight.org/installer/">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="Home">
+
+    <meta name="twitter:description"
+          content="FormationFlight provides FPV pilots with inter-UAS positioning & telemetry enabling formation flights, chase footage, and ground station coordination with ease.">
+
+    <meta name="twitter:image" content="https://formationflight.org/installer/images/social_share.png">
+    <style>
+        /* Centering and widening release notes */
+        #release-notes {
+            display: flex;
+            /*justify-content: right;*/
+            /*align-items: right;*/
+            flex-direction: column;
+            max-width: 70%; /* Adjust the percentage as needed */
+            margin: auto; /* This centers the div */
+        }
+
+        #notes-content {
+            width: 100%; /* Ensures content uses the full width of the parent */
+            text-align: left; /* Centers the text inside the notes-content */
+            padding-bottom: 2em;
+;
+        }
+
+
+        .inherited-styles-for-exported-element {
+            font-family: "Roboto", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        a::before {
+            transition: color 125ms;
+        }
+
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        .md-button, .install-supported {
+            border-image: none 100% 1 0 stretch;
+            border-radius: .1rem;
+            border-style: solid;
+            border-width: .1rem;
+            cursor: pointer;
+            display: inline-block;
+            font-weight: 700;
+            padding: .625em 2em;
+            transition: color 125ms, background-color 125ms, border-color 125ms;
+        }
+
+        .md-button--primary, .install-supported {
+            background-color: #4051b5;
+            border-color: #526cfe;
+            color: #fff;
+        }
+
+        .md-button:focus, .md-button:hover, .install-supported:focus, .install-supported:hover {
+            background-color: #526cfe;
+            border-color: #526cfe;
+            color: #fff;
+        }
+
+        :target {
+            scroll-margin-top: 0;
+        }
+
+        .twemoji {
+            display: inline-flex;
+            height: 1.125em;
+            vertical-align: text-top;
+        }
+
+        .twemoji svg {
+            fill: currentcolor;
+            max-height: 100%;
+            width: 1.125em;
+        }
+
+        html {
+            font-size: 16px;
+            /* This is IMPORTANT since some copied values use "REM" units */
+        }
+
+    </style>
+
+</head>
+<body class="font-sans text-white flex flex-col min-h-screen" style="background-color: #2e303e;">
+<!-- Adjusted for flex layout -->
+<div class="w-full bg-gray-800 px-4 py-4 flex items-center justify-center border-b border-gray-700"
+     style="background-color: #4051b5;">
+    <h1 class="text-2xl font-bold">FormationFlight Web Installer</h1>
+</div>
+<div class="flex-grow"> <!-- Content grows to push footer down -->
+    <div class="max-w-xl mx-auto px-4 py-6"> <!-- Main content container -->
+        <p class="mt-4">This is a tool for installing FormationFlight. For latest release info, see the <a
+                href="https://github.com/FormationFlight/FormationFlight/releases/latest"
+                class="text-blue-400 hover:text-blue-600">FormationFlight Github</a>.
+            Documentation can be found at <a href="https://formationflight.org"
+                                             class="text-blue-400 hover:text-blue-600">FormationFlight.org</a></p>
+        <br>
+        <h1 id="release-version" class="text-xl font-bold">Loading Release Version...</h1>
+<!--        <p class="mt-2">Select your target</p>-->
+        <select id="deviceTypeSelect" name="type"
+                class="mt-2  text-white border border-gray-700 rounded-md p-2" style="background-color: #1b1e25;">
+            <!-- Options will be dynamically added here -->
+        </select>
+        <div class="mt-4 flex justify-center">
+            <esp-web-install-button class="invisible"></esp-web-install-button>
+        </div>
+
+        <!--        <button id="toggleNotes">Show Release Notes</button>-->
+        <br>
+        <button id="toggleNotes" class="md-button md-button--primary inherited-styles-for-exported-element">Show Release
+            Notes<span class="twemoji"></span></button>
+
+    </div>
+    <div id="release-notes" style="display:none;">
+        <div id="notes-content"></div>
+    </div>
+
+</div>
+
+
+<!-- JavaScript at the bottom for better loading -->
+
+<div class="text-center p-6 border-t" style="border-color: #16171d; background-color: #16171d;">
+    <!-- Footer stays at bottom, inside body flex container -->
+    <a href="https://github.com/pastorhudson/formationflight-web-installer" class="text-blue-400 hover:text-blue-600">FormationFlight
+        Web
+        Install</a> &mdash; Installer powered by <a href="https://esphome.github.io/esp-web-tools/"
+                                                    class="text-blue-400 hover:text-blue-600">ESP Web Tools</a>.
+    For Support checkout the awesome <a href="https://discord.gg/npaX3VxQjh" class="text-blue-400 hover:text-blue-600">FormationFlight
+    discord</a>.
+</div>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="./scripts/loadReleaseInfo.js"></script>
+
+
+</body>
+</html>
