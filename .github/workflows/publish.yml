@@ -3,6 +3,15 @@ on:
   push:
     branches:
       - master
+  # The web installer serves firmware copied from the FormationFlight releases
+  # at build time (scripts/fetch_firmware.py), so the site is rebuilt on a
+  # schedule to pick up new ones, and can be rebuilt by hand or by a
+  # repository_dispatch ("firmware") from the firmware repo.
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+  repository_dispatch:
+    types: [firmware]
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 jobs:
@@ -36,9 +45,14 @@ jobs:
       - name: Install MkDocs
         run: pip install --upgrade git+https://github.com/squidfunk/mkdocs-material.git
 
+      - name: Fetch firmware for the web installer
+        run: python scripts/fetch_firmware.py --out docs/installer/firmware
+
+      # --no-history: the site now carries firmware images, and keeping every
+      # deploy's copy of them in gh-pages would grow the repo without bound.
       - name: Deploy release version
         run: |
-          mkdocs gh-deploy --force --config-file mkdocs.yml
+          mkdocs gh-deploy --force --no-history --config-file mkdocs.yml
           
       - name: Push changes to server
         run: |

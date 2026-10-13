@@ -69,8 +69,13 @@ plugins:
     cards_font: PT Sans
 
 extra_css:
-        #- assets/stylesheets/main.css
-        #- assets/stylesheets/colors.css
+  - installer/installer.css
+
+# The web installer (installer/index.md). Loaded on every page, and does
+# nothing on any page but that one.
+extra_javascript:
+  - path: installer/installer.js
+    type: module
 
 extra:
   analytics:
@@ -144,7 +149,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Web Installer: installer/index.html
+  - Web Installer: installer/index.md
   - Quick Start:
     - Getting Started: getting-started.md
     - Flight Controller Setup:
