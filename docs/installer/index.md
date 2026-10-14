@@ -21,7 +21,7 @@ Boards with USB (ESP32 dev boards, LilyGO, Heltec) just plug in.
 ExpressLRS receivers have no USB of their own. Wire them to a USB-to-serial adapter (an "FTDI") as shown in [Getting Started](../getting-started.md#connect-boards-without-usb): adapter TX to receiver RX, RX to TX, 5V and GND. Then put the receiver in bootloader mode by holding its **BOOT** button, or bridging the BOOT pad to ground, while you plug the adapter in. Release it once it is powered.
 
 !!! tip "Already running FormationFlight?"
-    You do not need to wire anything up to update it. Download the file here, join the node's WiFi, and upload it on the node's **Update** page.
+    You do not need to wire anything up to update it. Download the file here, join the node's WiFi, and upload it on the node's **Update** page. ExpressLRS receivers and other ESP8285 boards get a `.bin.gz`: upload it as it is, without unzipping it. Those boards only have room to receive the compressed image.
 
 ## What the options do
 

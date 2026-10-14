@@ -368,19 +368,36 @@ class Installer {
     try {
       const { env, parts } = await this.buildParts();
       const app = parts.find(p => p.app);
-      const file = `formationflight-${this.release.tag}-${this.device.id.replace(/[^A-Za-z0-9_.-]+/g, '_')}.bin`;
-      const url = URL.createObjectURL(new Blob([app.data], { type: 'application/octet-stream' }));
+      let data = app.data;
+      let file = `formationflight-${this.release.tag}-${this.device.id.replace(/[^A-Za-z0-9_.-]+/g, '_')}.bin`;
+      // On a 1 MB ESP8285 the node's Update page has room for the compressed
+      // image only, never the plain .bin (the bootloader unpacks it). So that
+      // is the file an ESP8266-family board gets.
+      const compressed = env.chip === 'ESP8266';
+      if (compressed) {
+        if (typeof CompressionStream === 'undefined') {
+          throw new Error('This browser cannot compress the firmware. Use Flash over USB, or a current Chrome, Edge, Firefox or Safari.');
+        }
+        this.setStatus('Compressing');
+        data = new Uint8Array(await new Response(
+          new Blob([data]).stream().pipeThrough(new CompressionStream('gzip'))).arrayBuffer());
+        file += '.gz';
+      }
+      const url = URL.createObjectURL(new Blob([data], { type: 'application/octet-stream' }));
       el('a', { href: url, download: file }).click();
       setTimeout(() => URL.revokeObjectURL(url), 10000);
-      this.setStatus(env.parts.length > 1
-        ? `Saved ${file}. That is the application only: upload it on the node's Update page. A board that has never run FormationFlight needs Flash over USB.`
-        : `Saved ${file}. Upload it on the node's Update page, or flash it at 0x0.`);
+      if (compressed) {
+        this.setStatus(`Saved ${file}. Upload it as it is, still compressed, on the node's Update page. To flash a board over serial, use Flash over USB instead.`);
+      } else {
+        this.setStatus(`Saved ${file}. That is the application only: upload it on the node's Update page. A board that has never run FormationFlight needs Flash over USB.`);
+      }
     } catch (err) {
       this.setStatus(err.message, true);
     } finally {
       this.setBusy(false);
     }
   }
+
 
   setBusy(busy) {
     this.busy = busy;
