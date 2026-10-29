@@ -42,8 +42,10 @@ jobs:
       - name: Install Dependencies
         run: make install-python-packages
 
+      # Pinned: mkdocs-material's main branch now needs Python >= 3.11, and
+      # MkDocs 2.0 does not work with it. 9.7.3 is what the site last built with.
       - name: Install MkDocs
-        run: pip install --upgrade git+https://github.com/squidfunk/mkdocs-material.git
+        run: pip install --upgrade "mkdocs-material==9.7.3" "mkdocs<2"
 
       - name: Fetch firmware for the web installer
         run: python scripts/fetch_firmware.py --out docs/installer/firmware
