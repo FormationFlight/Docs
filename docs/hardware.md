@@ -8,17 +8,19 @@ FormationFlight supports many targets for different hardware. If you don't see y
 
 Highly recommended for new users. The smallest, lightest, most affordable way to get started with FormationFlight.
 
-| Target Name                           | Radios              | Supported Hardware                                                                                          |
-|---------------------------------------|---------------------|-------------------------------------------------------------------------------------------------------------|
-| `expresslrs_rx_2400`                  | 2.4GHz LoRa, ESPNOW | HappyModel EP1/EP2, RadioMaster RP1/RP2 BetaFPV Lite, Flywoo EL24E, Foxeer Lite, GEPRC Nano, Matek F405-WTE |
-| `expresslrs_rx_2400_PA`               | 2.4GHz LoRa, ESPNOW | BetaFPV Nano, Jumper AION Nano, Matek R24-S                                                                 |
-| `expresslrs_rx_2400_AntennaDiversity` | 2.4GHz LoRa, ESPNOW | Matek R24-D, RadioMaster RP3                                                                                |
-| `expresslrs_rx_868`                   | 868MHz LoRa, ESPNOW | HappyModel ES900RX                                                                                          |
-| `expresslrs_rx_915`                   | 915MHz LoRa, ESPNOW | HappyModel ES900RX                                                                                          |
+FormationFlight runs on nearly every ExpressLRS receiver, using the same board definitions ExpressLRS itself uses. That covers ESP8285, ESP32, ESP32-C3 and ESP32-S3 receivers with an SX127x (900 MHz), SX1280 (2.4 GHz) or LR1121 (dual band) radio, including receivers with a PA/LNA, true diversity receivers, antenna-switching receivers, and Gemini dual-radio receivers. The [Web Installer](installer/index.md) lists every supported receiver by manufacturer.
+
+What is not supported:
+
+- PWM-only receivers. FormationFlight talks to your flight controller over a UART, and these have none.
+- Receivers with a built-in VTx.
+- STM32-based receivers, such as the FrSky R9 family and the original HappyModel ES915RX.
+
+ExpressLRS 900 MHz receivers run on 868 or 915 MHz, 2.4 GHz receivers on 2.4 GHz, and LR1121 receivers on any of the three. Their RF front ends are not built for 433 MHz, so that band is not offered on them.
 
 ### Legacy Targets
 
-Legacy targets from iNav Radar are also supported in FormationFlight
+Legacy targets from iNav Radar are also supported in FormationFlight. Each one boots on the band in its name, and can be switched to another in the node's web UI.
 
 | Target Name             | Radios              | Supported Hardware             |
 |-------------------------|---------------------|--------------------------------|

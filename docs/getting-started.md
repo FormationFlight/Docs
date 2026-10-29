@@ -12,7 +12,7 @@ Using a small additional radio board attached to your flight controller, Formati
 
 Presently, the best boards to use are repurposed ExpressLRS receivers like the HappyModel EP1 or similar. **Note that using ExpressLRS itself is not required to use FormationFlight**. FormationFlight is RC-link agnostic and works with TBS Crossfire, TBS Tracer, IRC Ghost, DragonLink, FrSky, whatever you may choose to use, and requires its own hardware, it just happens that ExpressLRS hardware makes a good platform for FormationFlight.
 
-FormationFlight supports a 2.4GHz LoRa, 900MHz LoRa, 433MHz LoRa, and 2.4GHz ESPNOW. 2.4GHz LoRa is highly recommended, and will achieve approximately 5-10km of range under normal conditions. FormationFlight has been tested to run next to ExpressLRS 2.4GHz without meaningfully degrading the performance of either system. FormationFlight runs at 10mW and at the low end of the ExpressLRS hop table.
+FormationFlight supports a 2.4GHz LoRa, 900MHz LoRa, 433MHz LoRa, and 2.4GHz ESPNOW. 2.4GHz LoRa is highly recommended, and will achieve approximately 5-10km of range under normal conditions. FormationFlight has been tested to run next to ExpressLRS 2.4GHz without meaningfully degrading the performance of either system. FormationFlight runs at 10mW by default, on a single fixed channel in each band.
 
 ---
 
@@ -54,7 +54,9 @@ You can download an easy to use ESP flasher tool from [Jason8266's ESP\_Flasher 
 
 #### Download pre-built binaries
 
-A simple way to install FormationFlight is by downloading pre-built binaries from [GitHub Releases](https://github.com/FormationFlight/FormationFlight/releases/latest). Choose the correct binary file for your board (for example, `expresslrs_rx_2400` for a 2.4GHz ExpressLRS receiver without PA/LNA like the HappyModel EP1/EP2).
+A simple way to install FormationFlight is by downloading pre-built binaries from [GitHub Releases](https://github.com/FormationFlight/FormationFlight/releases/latest). Choose the correct binary file for your board.
+
+ExpressLRS receivers share a handful of builds (`Unified_ESP8285_2400` covers every ESP8285 2.4 GHz receiver, for example), and the build only knows which receiver it is on once that receiver's pin layout has been added to it. A `.bin` straight from GitHub has none, so the radio will not come up. For an ExpressLRS receiver, pick your receiver in the [Web Installer](https://formationflight.org/installer/) and use **Download firmware** instead: that gives you a `.bin` built for your receiver, which you can flash with the tool below.
 
 See the list of [supported hardware](/hardware/) for other targets.
 

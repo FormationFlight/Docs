@@ -1,2 +1,4 @@
 .cache
 *.swp
+docs/installer/firmware/
+site/

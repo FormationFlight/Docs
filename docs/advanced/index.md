@@ -8,13 +8,9 @@ There are some common compile-time build flags one may wish to pass to change th
 
 ### LoRa Power
 
-FormationFlight defaults to very low output power; LoRa has tremendous range (10km+) even at these very low power levels, and keeping power low helps to reduce interference with other systems on the same band like your control link.
+FormationFlight defaults to very low output power, 10 mW; LoRa has tremendous range (10km+) even at these very low power levels, and keeping power low helps to reduce interference with other systems on the same band like your control link.
 
-If you feel the need to change the targeted output power of a FormationFlight system, please keep in mind whether there is an attached PA affecting the **actual** output power of the system. For example, the `expresslrs_rx_2400_PA_via_UART` has `LORA_POWER=-10`, but it passes through a PA which re-amplifies the signal back up to a higher power. Running the SX1280 at +13dBm into the PA is probably a very bad idea.
-
-```
--D LORA_POWER=10
-```
+Power is a setting, not a build flag: **LoRa TX power** under Settings, Radios in the node's web UI. It takes effect immediately. On ExpressLRS hardware it is rounded down to the receiver's own power levels (10, 25, 50, 100 mW and so on), and on a receiver with a PA it sets the power out of the PA, not the radio chip. The dashboard shows what the node actually settled on. Every band also has a legal ceiling that the setting cannot exceed.
 
 ### MSP GPS Injection
 
