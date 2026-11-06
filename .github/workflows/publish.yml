@@ -4,11 +4,12 @@ on:
     branches:
       - master
   # The web installer serves firmware copied from the FormationFlight releases
-  # at build time (scripts/fetch_firmware.py), so the site is rebuilt on a
-  # schedule to pick up new ones, and can be rebuilt by hand or by a
-  # repository_dispatch ("firmware") from the firmware repo.
+  # at build time (scripts/fetch_firmware.py). The firmware repo sends a
+  # repository_dispatch ("firmware") after each release, so the site picks up
+  # new firmware right away; the daily run is only a backstop in case one is
+  # missed.
   schedule:
-    - cron: '17 */6 * * *'
+    - cron: '17 9 * * *'
   workflow_dispatch:
   repository_dispatch:
     types: [firmware]
@@ -19,15 +20,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout latest push
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Python env
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.9.16
+          python-version: '3.11'
 
       - name: Setup Caching
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           key: ${{ github.ref }}
           path: .cache
@@ -42,8 +43,8 @@ jobs:
       - name: Install Dependencies
         run: make install-python-packages
 
-      # Pinned: mkdocs-material's main branch now needs Python >= 3.11, and
-      # MkDocs 2.0 does not work with it. 9.7.3 is what the site last built with.
+      # Pinned: MkDocs 2.0 does not work with mkdocs-material. 9.7.3 is what
+      # the site last built with.
       - name: Install MkDocs
         run: pip install --upgrade "mkdocs-material==9.7.3" "mkdocs<2"
 
