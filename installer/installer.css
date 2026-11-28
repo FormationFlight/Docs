@@ -1,0 +1,100 @@
+/* The web installer's form. Only what Material has no style for (form
+   controls); everything else is Material's own typeset, buttons and tables,
+   in Material's colours, so the page reads as part of the docs. */
+
+.ff-installer .ff-field {
+  margin: 0.8em 0;
+  border: 0;
+  padding: 0;
+}
+
+.ff-installer label:not(.ff-check):not(fieldset label),
+.ff-installer .ff-label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.25em;
+  padding: 0;
+}
+
+.ff-installer .ff-hint {
+  font-weight: 400;
+  font-size: 0.85em;
+  color: var(--md-default-fg-color--light);
+}
+
+.ff-installer select,
+.ff-installer input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 30rem;
+  padding: 0.4em 0.6em;
+  font: inherit;
+  color: var(--md-default-fg-color);
+  background-color: var(--md-default-bg-color);
+  border: 0.05rem solid var(--md-default-fg-color--lighter);
+  border-radius: 0.1rem;
+}
+
+.ff-installer select:focus,
+.ff-installer input[type="text"]:focus {
+  outline: none;
+  border-color: var(--md-accent-fg-color);
+}
+
+.ff-installer select:disabled,
+.ff-installer input:disabled {
+  opacity: 0.5;
+}
+
+.ff-installer .ff-field > .ff-hint {
+  display: block;
+  margin-top: 0.25em;
+}
+
+.ff-installer .ff-bands label {
+  display: inline-block;
+  margin-right: 1.5em;
+  font-weight: 400;
+}
+
+.ff-installer .ff-check {
+  font-weight: 700;
+}
+
+.ff-installer table.ff-device th {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ff-installer .md-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.ff-installer .ff-status.ff-error {
+  /* Material's own "failure" admonition red. */
+  color: #ff1744;
+}
+
+.ff-installer progress {
+  width: 100%;
+  max-width: 30rem;
+  accent-color: var(--md-primary-fg-color);
+}
+
+.ff-installer .ff-log {
+  max-height: 16rem;
+  overflow: auto;
+}
+
+/* Material styles pre and progress with an explicit display, which beats the
+   hidden attribute; the log and progress bar stay out until there is
+   something to show. */
+.ff-installer [hidden] {
+  display: none !important;
+}
+
+.ff-installer table.ff-device th {
+  text-align: left;
+}

@@ -1,0 +1,12 @@
+{
+ "releases": [
+  {
+   "tag": "development",
+   "name": "Development build",
+   "prerelease": true,
+   "date": "2026-11-06T07:09:30Z",
+   "commit": "1bbd723",
+   "url": "https://github.com/FormationFlight/FormationFlight/releases/tag/development"
+  }
+ ]
+}
